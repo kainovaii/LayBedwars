@@ -13,11 +13,6 @@ import org.bukkit.plugin.Plugin;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Manager for FastInv listeners.
- *
- * @author MrMicky
- */
 public final class InventoryManager {
 
     private static final AtomicBoolean REGISTERED = new AtomicBoolean(false);
