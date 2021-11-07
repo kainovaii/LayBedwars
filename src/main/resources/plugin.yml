@@ -1,4 +1,4 @@
-name: LaySimple
+name: LayAPI
 version: '${project.version}'
 main: de.laycraft.LaySimple.LaySimple
 authors: [ KainoVaii ]

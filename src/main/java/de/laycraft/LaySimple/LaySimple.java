@@ -1,10 +1,7 @@
 package de.laycraft.LaySimple;
 
-import de.laycraft.LaySimple.commands.GamemodeCommand;
-import de.laycraft.LaySimple.commands.InventoryCommand;
+import de.laycraft.LaySimple.commands.*;
 import de.laycraft.LaySimple.CommandAPI.CommandManager;
-import de.laycraft.LaySimple.commands.LaySimpleCommand;
-import de.laycraft.LaySimple.commands.SpawnCommand;
 import de.laycraft.LaySimple.listerners.ChatEvent;
 import de.laycraft.LaySimple.listerners.JoinEvent;
 import de.laycraft.LaySimple.listerners.ScoreboardEvent;
@@ -56,7 +53,7 @@ public final class LaySimple extends JavaPlugin implements Listener {
     public void setupEvent()
     {
         saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(new ScoreboardEvent(this), this);
+        //getServer().getPluginManager().registerEvents(new ScoreboardEvent(this), this);
         getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
         getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
     }

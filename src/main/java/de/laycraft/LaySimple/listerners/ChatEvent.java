@@ -23,16 +23,16 @@ public class ChatEvent implements Listener {
         String currentGroup = Arrays.toString(main.getPermissions().getPlayerGroups(player));
 
         if (currentGroup.equals("[admin]")) {
-            event.setFormat("§c⚠ §4Admin §4" + player.getName() + " §8» §r" + event.getMessage());
+            event.setFormat("§c⚠ " + main.getConfig().getString("groupprefix.admin") + player.getName() + " §8» §r" + event.getMessage());
         }
         if (currentGroup.equals("[moderator]")) {
-            event.setFormat("§c⚠ §cModérateur §c" + player.getName() + " §8» §r" + event.getMessage());
+            event.setFormat("§c⚠ c" + main.getConfig().getString("groupprefix.moderator") + player.getName() + " §8» §r" + event.getMessage());
         }
         if (currentGroup.equals("[helper]")) {
-            event.setFormat("§c⚠ §cHelper §c" + player.getName() + " §8» §r" + event.getMessage());
+            event.setFormat("§c⚠ " + main.getConfig().getString("groupprefix.helper") + player.getName() + " §8» §r" + event.getMessage());
         }
         if (currentGroup.equals("[default]")) {
-            event.setFormat("§c⚠ §7Joueur §7" + player.getName() + " §8» §r" + event.getMessage());
+            event.setFormat("§c⚠ " + main.getConfig().getString("groupprefix.default") + player.getName() + " §8» §r" + event.getMessage());
         }
     }
 }

@@ -22,6 +22,7 @@ public class GamemodeCommand extends Command {
         if (args.length > 0 && args[0].equalsIgnoreCase("creative")) {
             player.setGameMode(GameMode.CREATIVE);
             player.sendMessage("§7Mode de jeu §bcréatif §7defini pour §b" + player.getName());
+
             return;
         }
 

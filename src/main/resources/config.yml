@@ -1,3 +1,9 @@
 informations:
   environnement: Production
   server: mc.lobby_1.4
+
+groupprefix:
+  admin: "§4Admin §4"
+  moderator: "§cModérateur §c"
+  helper: "§cHelper §c"
+  player: "§7Joueur §7"

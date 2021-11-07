@@ -21,16 +21,11 @@ public class LaySimpleCommand extends Command {
 
         Player player = (Player) sender;
 
-        if (args.length > 0 && args[0].equalsIgnoreCase("test")) {
-
-            return;
-        }
-
-        player.sendMessage("§m§6--------------------------------------");
+        player.sendMessage("§m§6------------------------------------");
         player.sendMessage("§eEnvironnement: §b " + main.getConfig().getString("informations.environnement"));
         player.sendMessage("§eServeur: §b " +  main.getConfig().getString("informations.server"));
         player.sendMessage("§ePlugins externes: §b VaultAPI");
         player.sendMessage("§ePlugins internes: §b LaySimple §f7584-15245");
-        player.sendMessage("§m§6--------------------------------------");
+        player.sendMessage("§m§6------------------------------------");
     }
 }

@@ -57,15 +57,56 @@ public class ScoreboardEvent implements Listener {
         String currentGroup = Arrays.toString(main.getPermissions().getPlayerGroups(board.getPlayer()));
         String currentPlayer =  board.getPlayer().getName();
 
-        board.updateLines(
-                "",
-                "§7Nom§f: " + currentPlayer,
-                "§7Grade§f: " + currentGroup,
-                "",
-                "§cEuros§f: §c00.0",
-                "§7Lobby§f: §b#1",
-                "",
-                "§7 www.laycraft.fr"
-        );
+        if (currentGroup.equals("[admin]")) {
+            board.updateLines(
+                    "",
+                    "§7Nom§f: §b" + currentPlayer,
+                    "§7Grade§f: §4Admin",
+                    "",
+                    "§cEuros§f: §c00.0",
+                    "§7Lobby§f: §b#1",
+                    "",
+                    "§7 www.laycraft.fr"
+            );
+        }
+
+        if (currentGroup.equals("[moderator]")) {
+            board.updateLines(
+                    "",
+                    "§7Nom§f: §b" + currentPlayer,
+                    "§7Grade§f: §cModérateur",
+                    "",
+                    "§cEuros§f: §c00.0",
+                    "§7Lobby§f: §b#1",
+                    "",
+                    "§7 www.laycraft.fr"
+            );
+        }
+
+        if (currentGroup.equals("[helper]")) {
+            board.updateLines(
+                    "",
+                    "§7Nom§f: §b" + currentPlayer,
+                    "§7Grade§f: §cHelper",
+                    "",
+                    "§cEuros§f: §c00.0",
+                    "§7Lobby§f: §b#1",
+                    "",
+                    "§7 www.laycraft.fr"
+            );
+        }
+
+        if (currentGroup.equals("[default]")) {
+            board.updateLines(
+                    "",
+                    "§7Nom§f: §b" + currentPlayer,
+                    "§7Grade§f: §7Joueur",
+                    "",
+                    "§cEuros§f: §c00.0",
+                    "§7Lobby§f: §b#1",
+                    "",
+                    "§7 www.laycraft.fr"
+            );
+        }
     };
 }
