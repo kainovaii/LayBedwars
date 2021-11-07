@@ -1,4 +1,4 @@
-package de.laycraft.LaySimple;
+package de.laycraft.LaySimple.Iventory;
 
 import de.laycraft.LaySimple.InventoryAPI.InventoryAPI;
 import org.bukkit.ChatColor;
@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 public class InventoryEvent extends InventoryAPI {
 
     public InventoryEvent() {
+
         super(45, "§cTestInv");
 
         setItem(22, new ItemStack(Material.IRON_SWORD), e -> e.getWhoClicked().sendMessage("test"));

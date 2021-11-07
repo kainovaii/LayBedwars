@@ -1,8 +1,8 @@
-package de.laycraft.LaySimple;
+package de.laycraft.LaySimple.listerners;
 
+import de.laycraft.LaySimple.LaySimple;
 import de.laycraft.LaySimple.ScoreboardAPI.ScoreboardAPI;
 
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,7 +37,7 @@ public class ScoreboardEvent implements Listener {
 
         ScoreboardAPI board = new ScoreboardAPI(player);
 
-        board.updateTitle(ChatColor.RED + "§b§lLayCraft");
+        board.updateTitle("§f● §c§lLayCraft §f●");
 
         this.boards.put(player.getUniqueId(), board);
     }
@@ -55,14 +55,17 @@ public class ScoreboardEvent implements Listener {
 
     public void updateBoard(ScoreboardAPI board) {
         String currentGroup = Arrays.toString(main.getPermissions().getPlayerGroups(board.getPlayer()));
+        String currentPlayer =  board.getPlayer().getName();
 
         board.updateLines(
                 "",
-                "§6§l➢ §f§l" + board.getPlayer().getName(),
+                "§7Nom§f: " + currentPlayer,
+                "§7Grade§f: " + currentGroup,
                 "",
-                "§6§l➢ " + currentGroup,
+                "§cEuros§f: §c00.0",
+                "§7Lobby§f: §b#1",
                 "",
-                "§bwww.laycraft.fr"
+                "§7 www.laycraft.fr"
         );
     };
 }

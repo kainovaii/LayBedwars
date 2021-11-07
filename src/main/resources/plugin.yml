@@ -2,4 +2,4 @@ name: LaySimple
 version: '${project.version}'
 main: de.laycraft.LaySimple.LaySimple
 authors: [ KainoVaii ]
-depend: [PlaceholderAPI, Vault]
+depend: [Vault]

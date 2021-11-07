@@ -1,16 +1,13 @@
-package de.laycraft.LaySimple;
+package de.laycraft.LaySimple.listerners;
 
-import me.clip.placeholderapi.PlaceholderAPI;
-import me.clip.placeholderapi.PlaceholderHook;
-import org.bukkit.OfflinePlayer;
+import de.laycraft.LaySimple.LaySimple;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 public class ChatEvent implements Listener {
     LaySimple main;
@@ -26,11 +23,16 @@ public class ChatEvent implements Listener {
         String currentGroup = Arrays.toString(main.getPermissions().getPlayerGroups(player));
 
         if (currentGroup.equals("[admin]")) {
-            event.setFormat("§4Admin §4" + player.getName() + " §8» §r" + event.getMessage());
+            event.setFormat("§c⚠ §4Admin §4" + player.getName() + " §8» §r" + event.getMessage());
         }
-
+        if (currentGroup.equals("[moderator]")) {
+            event.setFormat("§c⚠ §cModérateur §c" + player.getName() + " §8» §r" + event.getMessage());
+        }
+        if (currentGroup.equals("[helper]")) {
+            event.setFormat("§c⚠ §cHelper §c" + player.getName() + " §8» §r" + event.getMessage());
+        }
         if (currentGroup.equals("[default]")) {
-            event.setFormat("§7Joueur §7" + player.getName() + " §8» §r" + event.getMessage());
+            event.setFormat("§c⚠ §7Joueur §7" + player.getName() + " §8» §r" + event.getMessage());
         }
     }
 }

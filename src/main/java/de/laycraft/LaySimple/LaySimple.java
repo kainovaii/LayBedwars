@@ -1,6 +1,13 @@
 package de.laycraft.LaySimple;
 
+import de.laycraft.LaySimple.commands.GamemodeCommand;
+import de.laycraft.LaySimple.commands.InventoryCommand;
 import de.laycraft.LaySimple.CommandAPI.CommandManager;
+import de.laycraft.LaySimple.commands.LaySimpleCommand;
+import de.laycraft.LaySimple.commands.SpawnCommand;
+import de.laycraft.LaySimple.listerners.ChatEvent;
+import de.laycraft.LaySimple.listerners.JoinEvent;
+import de.laycraft.LaySimple.listerners.ScoreboardEvent;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -15,10 +22,8 @@ public final class LaySimple extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getServer().getPluginManager().registerEvents(new ScoreboardEvent(this), this);
-        getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
-        commandManager = new CommandManager(this);
-        commandManager.registerCommand(new CommandTest(this));
+        setupEvent();
+        setupCommand();
         setupPermissions();
     }
 
@@ -38,4 +43,21 @@ public final class LaySimple extends JavaPlugin implements Listener {
     }
 
     public static Chat getChat() { return chat; }
+
+    public void setupCommand()
+    {
+        commandManager = new CommandManager(this);
+        commandManager.registerCommand(new InventoryCommand(this));
+        commandManager.registerCommand(new GamemodeCommand(this));
+        commandManager.registerCommand(new SpawnCommand(this));
+        commandManager.registerCommand(new LaySimpleCommand(this));
+    }
+
+    public void setupEvent()
+    {
+        saveDefaultConfig();
+        getServer().getPluginManager().registerEvents(new ScoreboardEvent(this), this);
+        getServer().getPluginManager().registerEvents(new ChatEvent(this), this);
+        getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
+    }
 }
